@@ -1790,7 +1790,7 @@ type LoaderData = { joke: Joke };
 
 export let loader: LoaderFunction = async ({ params }) => {
   let joke = await db.joke.findUnique({
-    where: { id: params.jokeId }
+    where: { id: params.jokesId }
   });
   if (!joke) throw new Error("Joke not found");
   let data: LoaderData = { joke };
